@@ -1,0 +1,217 @@
+<!DOCTYPE <!doctype html>
+<html lang="en">
+    <head>
+        <title>TurfSmith | Dashboard</title>
+        <link rel="icon" href="icon.png" type="image/png">
+        <link rel="shortcut icon" href="icon.png" type="image/png">
+
+        <!-- Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- JQUERY -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        <script src="http://tempus.com/js/jquery.fullPage.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+        <!-- BBONE + UNDERSCORE -->
+        <script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+
+        <link href="./stylesheets/main.css" rel="stylesheet"/>
+        <script src="./js/scripts.js" type="text/javascript"></script>
+    </head>
+
+    <body class="dashboard">
+        <div class="header">
+            <div class="header-top">
+                <nav class="header-nav active">
+                    <a href="index.html" class="header-nav-logo">
+                        <img src="./img/logo_small.png"/>
+                    </a>
+                    <a href="index.html" class="header-nav-link">dashboard</a>
+                    <a href="inventory.html" class="header-nav-link">Inventory</a>
+                    <a href="order.html" class="header-nav-link active">Purchasing</a>
+                    <a href="budget.html" class="header-nav-link">Budget</a>
+                    <a href="tasks.html" class="header-nav-link">Tasks</a>
+                    <a href="reports.html" class="header-nav-link">Reports</a>
+                </nav>
+                <div class="header-top-right">
+                    <a href="#" class="top-right-icon">
+                        <i class="icon-users"></i>
+                    </a>
+                    <a href="#" class="top-right-icon">
+                        <i class="icon-bell"></i>
+                    </a>
+                    <a href="#" class="top-right-account">
+                        Alex Stomp <i class="icon-caret-down"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <nav class="header-crumbs">
+                    <a href="#" class="header-breadcrumb">Order</a>
+                    <i class="header-crumbs-divider icon-caret-right"></i>
+                    <a href="#" class="header-breadcrumb greyed">Breadcrumbs...</a>
+                </nav>
+                <nav class="header-bottom-actions">
+                    <p class="header-budget">
+                        <span class="label">CURRENT BUDGET</span>
+                        <span class="green">$14,560</span>
+                        <span class="red">(- $340)</span>
+                    </p>
+                    <p class="header-new-order">
+                        <span class="label">NEW ORDER</span>
+                        <span class="orange">$356</span>
+                        <span class="white">3 items</span>
+                    </p>
+                    <a href="#" class="button accent">PLACE ORDER</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="dashboard-filters">
+                <div class="filters-left">
+                    <p class="filter-label">Find what you need</p>
+                    <input type="text" class="filter-search" placeholder="search"/>
+                    <a href="#" class="button">LOAD RESULTS</a>
+                </div>
+                <div class="filters-right">
+                    <p class="filter-label">Filter your results</p>
+                    <h2 class="temp">Filters based on data we have and market research.</h2>
+                </div>
+            </div>
+            <div class="panel full">
+                <div class="panel-header">
+                    <h2 class="panel-header-text">Available Items</h2>
+                    <nav class="panel-header-actions">
+                        <a href="index.html" class="button small panel-header-button">INVENTORY</a>
+                    </nav>
+                </div>
+                <table class="panel-content table order-table">
+                    <thead class="table-thead">
+                        <tr class="table-tr">
+                            <th class="table-th order-item-name">Item</th>
+                            <th class="table-th order-item-price">price per unit</th>
+                            <th class="table-th order-item-quantity">available</th>
+                            <th class="table-th order-item-delivery">Delivery Time</th>
+                            <th class="table-th order-item-actions"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-tbody">
+                        <tr class="table-tr">
+                            <td class="table-td order-item-name">Seeds of type one (RMX6182930)</td>
+                            <td class="table-td order-item-price green">$75</td>
+                            <td class="table-td order-item-quantity">30.5 BAGS</td>
+                            <td class="table-td order-item-delivery">5-9 DAYS</td>
+                            <td class="table-td order-item-actions">
+                                <a href="#" class="item-actions-add"><i class="icon-add"></i> Add to Order</a>
+                            </td>
+                        </tr>
+                        <tr class="table-tr">
+                            <td class="table-td order-item-name">Fertilizer (AM1289841)</td>
+                            <td class="table-td order-item-price green">$54</td>
+                            <td class="table-td order-item-quantity">20 BAGS</td>
+                            <td class="table-td order-item-delivery">3 DAYS</td>
+                            <td class="table-td order-item-actions">
+                                <a href="#" class="item-actions-add"><i class="icon-add"></i> Add to Order</a>
+                            </td>
+                        </tr>
+                        <tr class="table-tr">
+                            <td class="table-td order-item-name">Turf Builder (Scotts 49013)</td>
+                            <td class="table-td order-item-price green">$120</td>
+                            <td class="table-td order-item-quantity">2 BOTTLES</td>
+                            <td class="table-td order-item-delivery">SAME DAY</td>
+                            <td class="table-td order-item-actions">
+                                <a href="#" class="item-actions-add"><i class="icon-add"></i> Add to Order</a>
+                            </td>
+                        </tr>
+                        <tr class="table-tr">
+                            <td class="table-td order-item-name">Bentgrass Seeds</td>
+                            <td class="table-td order-item-price green">$43</td>
+                            <td class="table-td order-item-quantity">15 BAGS</td>
+                            <td class="table-td order-item-delivery">7-15 DAYS</td>
+                            <td class="table-td order-item-actions">
+                                <a href="#" class="item-actions-add"><i class="icon-add"></i> Add to Order</a>
+                            </td>
+                        </tr>
+                        <tr class="table-tr">
+                            <td class="table-td order-item-name">Bermuda Grass</td>
+                            <td class="table-td order-item-price green">$194</td>
+                            <td class="table-td order-item-quantity">10 BAGS</td>
+                            <td class="table-td order-item-delivery">2 DAYS</td>
+                            <td class="table-td order-item-actions">
+                                <a href="#" class="item-actions-add"><i class="icon-add"></i> Add to Order</a>
+                            </td>
+                        </tr>
+                        <tr class="table-tr">
+                            <td class="table-td order-item-name">Poa Annua Grass</td>
+                            <td class="table-td order-item-price green">$175</td>
+                            <td class="table-td order-item-quantity">7 BAGS</td>
+                            <td class="table-td order-item-delivery">14+ DAYS</td>
+                            <td class="table-td order-item-actions">
+                                <a href="#" class="item-actions-add"><i class="icon-add"></i> Add to Order</a>
+                            </td>
+                        </tr>
+                        <tr class="table-tr">
+                            <td class="table-td order-item-name">Turf Builder (Scotts 49013)</td>
+                            <td class="table-td order-item-price green">$35</td>
+                            <td class="table-td order-item-quantity">2 BOTTLES</td>
+                            <td class="table-td order-item-delivery">SAME DAY</td>
+                            <td class="table-td order-item-actions">
+                                <a href="#" class="item-actions-add"><i class="icon-add"></i> Add to Order</a>
+                            </td>
+                        </tr>
+                        <tr class="table-tr">
+                            <td class="table-td order-item-name">Bentgrass Seeds</td>
+                            <td class="table-td order-item-price green">$89</td>
+                            <td class="table-td order-item-quantity">15 BAGS</td>
+                            <td class="table-td order-item-delivery">7-15 DAYS</td>
+                            <td class="table-td order-item-actions">
+                                <a href="#" class="item-actions-add"><i class="icon-add"></i> Add to Order</a>
+                            </td>
+                        </tr>
+                        <tr class="table-tr">
+                            <td class="table-td order-item-name">Bermuda Grass</td>
+                            <td class="table-td order-item-price green">$38</td>
+                            <td class="table-td order-item-quantity">10 BAGS</td>
+                            <td class="table-td order-item-delivery">2 DAYS</td>
+                            <td class="table-td order-item-actions">
+                                <a href="#" class="item-actions-add"><i class="icon-add"></i> Add to Order</a>
+                            </td>
+                        </tr>
+                        <tr class="table-tr">
+                            <td class="table-td order-item-name">Poa Annua Grass</td>
+                            <td class="table-td order-item-price green">$158</td>
+                            <td class="table-td order-item-quantity">7 BAGS</td>
+                            <td class="table-td order-item-delivery">14+ DAYS</td>
+                            <td class="table-td order-item-actions">
+                                <a href="#" class="item-actions-add"><i class="icon-add"></i> Add to Order</a>
+                            </td>
+                        </tr>
+                        <tr class="table-tr">
+                            <td class="table-td order-item-name">Turf Builder (Scotts 49013)</td>
+                            <td class="table-td order-item-price green">$170</td>
+                            <td class="table-td order-item-quantity">2 BOTTLES</td>
+                            <td class="table-td order-item-delivery">SAME DAY</td>
+                            <td class="table-td order-item-actions">
+                                <a href="#" class="item-actions-add"><i class="icon-add"></i> Add to Order</a>
+                            </td>
+                        </tr>
+                        <tr class="table-tr">
+                            <td class="table-td order-item-name">Bentgrass Seeds</td>
+                            <td class="table-td order-item-price green">$13</td>
+                            <td class="table-td order-item-quantity">15 BAGS</td>
+                            <td class="table-td order-item-delivery">7-15 DAYS</td>
+                            <td class="table-td order-item-actions">
+                                <a href="#" class="item-actions-add"><i class="icon-add"></i> Add to Order</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </body>
+</html>

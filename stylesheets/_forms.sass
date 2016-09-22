@@ -4,18 +4,16 @@
 input
     +roundedCorners()
     border: 1px solid $border
-    font-size: 1.75rem
+    font-size: 16px
     font-weight: 400
     line-height: 40px
     height: 40px
     margin-bottom: 10px
     outline: none
     padding: 0 10px
-    width: 100%
     +placeholder
         font-weight: 300
-        &:first-letter
-            text-transform: capitalize
+        text-transform: capitalize
     &:focus
         border-color: $accent
 
@@ -73,23 +71,39 @@ label
 
 .button, input[type="button"], input[type="submit"]
     @extend input
-    +backgroundGradient('top, $accent, darken($accent, 5%)')
-    +text-shadow(0 1px rgba(0,0,0,0.1))
-    background-color: darken($accent, 5%)
-    border: 1px solid darken($accent, 10%)
-    color: #fff
-    display: block
-    font-size: 13px
-    padding: 0 30px 0 20px
+    +transition(background, 0.2s)
+    background: lighten(#bac3d4, 15%)
+    border: 1px solid darken(#bac3d4, 8%)
+    color: #4b526c
+    display: inline-block
+    font-size: 12px
+    font-weight: 600
+    padding: 0 20px 0 20px
     [class^="icon-"], [class*=" icon-"], [class^="path"], [class*=" path"]
         font-size: 16px
         padding-right: 5px
         vertical-align: middle
-    &:hover
+    &:hover, &:focus
+        background: lighten(#bac3d4, 18%)
+        border: 1px solid darken(#bac3d4, 10%)
+    &.small
+        height: 30px
+        line-height: 30px
+        padding: 0 15px
+    &.accent
+        +backgroundGradient('top, $accent, darken($accent, 5%)')
+        +text-shadow(0 1px rgba(0,0,0,0.1))
         background-color: darken($accent, 10%)
-        border: 1px solid darken($accent, 15%)
+        border: 1px solid darken($accent, 12%)
         color: #fff
-        cursor: pointer
+        font-weight: 600
+        text-transform: uppercase
+        letter-spacing: 0.75px
+        &:hover
+            background-color: darken($accent, 13%)
+            border: 1px solid darken($accent, 15%)
+            color: #fff
+            cursor: pointer
 
 // MEDIUM
 

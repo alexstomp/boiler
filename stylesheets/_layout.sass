@@ -13,7 +13,25 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
     -moz-box-sizing: border-box
     box-sizing: border-box
 
+.clearfix
+    &:after
+        clear: both
+        content: ""
+        display: table
+
 // PAGE ELEMENTS & COMMON CLASSES
+
+html, body
+    display: block
+    min-height: 100%
+    overflow-x: hidden
+    width: 100%
+
+body
+    @extend .clearfix
+    background: $bg
+    display: block
+    position: relative
 
 
 // GREATER THAN MAX-WIDTH (HUGE DISPLAY)

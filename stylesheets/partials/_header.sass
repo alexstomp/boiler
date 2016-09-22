@@ -1,5 +1,195 @@
 // HEADER
 
+.header
+    background: $dark_blue
+    display: block
+    height: 120px
+    margin-bottom: 5px
+    width: 100%
+    .header-top
+        @extend .clearfix
+        background: $dark_blue
+        display: block
+        padding: 15px
+        height: 55px
+        .header-nav
+            float: left
+            .header-nav-logo, .header-nav-link
+                display: inline-block
+            .header-nav-logo
+                height: 15px
+                margin-right: 10px
+                position: relative
+                vertical-align: text-bottom
+                width: 85px
+                img
+                    height: 15px
+                    position: absolute
+                    top: -1px
+            .header-nav-link
+                +text-shadow(1px 1px 1px darken($dark_blue,7%))
+                +transition(color, 0.1s)
+                color: #8c94a4
+                font-size: 14px
+                font-weight: 400
+                line-height: 28px
+                margin: 0 10px
+                padding: 0 5px
+                text-transform: uppercase
+                &:hover
+                    color: #88b0ca
+                &.active
+                    color: $accent
+        .header-top-right
+            float: right
+            .top-right-icon
+                +text-shadow(1px 1px 1px darken($dark_blue, 3%))
+                +transition(color, 0.2s)
+                display: inline-block
+                color: #8c94a4
+                font-size: 16.5px
+                margin-left: 15px
+                vertical-align: middle
+                &:hover
+                    color: lighten(#8c94a4, 15%)
+                    cursor: pointer
+            .top-right-account
+                +text-shadow(1px 1px 1px darken($dark_blue, 3%))
+                +shadow(-1px 0px 0px lighten($dark_blue, 5%))
+                +transition(color, 0.1s)
+                border-left: 1px solid #272d39
+                color: darken($header_text, 10%)
+                display: inline-block
+                font-size: 14px
+                font-weight: 400
+                line-height: 27px
+                margin-left: 14px
+                padding-left: 20px
+                text-transform: uppercase
+                .icon-caret-down
+                    display: inline-block
+                    text-align: right
+                    line-height: inherit
+                    vertical-align: middle
+                    width: 20px
+                &:hover
+                    color: $header_text
+    .header-bottom
+        @extend .clearfix
+        +shadow(0 -1px 1px darken($dark_blue, 5%))
+        background: $blue
+        border-top: 1px solid lighten($blue, 3%)
+        display: block
+        padding: 15px
+        height: 70px
+        .header-crumbs
+            float: left
+            height: 40px
+            .header-breadcrumb, .header-crumbs-divider
+                +transition(color, 0.1s)
+                color: $header_text
+                float: left
+                font-size: 15px
+                font-weight: 200
+                line-height: 37px
+                &.greyed
+                    color: transparentize($header_text, 0.5)
+                &:hover
+                    color: lighten($header_text, 3%)
+            .header-crumbs-divider
+                font-size: 13px
+                height: 40px
+                line-height: 40px
+                text-align: middle
+                padding: 0 10px
+                width: 33px
+        .header-new-order
+            font-weight: 400
+            float: left
+            height: 40px
+            margin-right: 20px
+            text-transform: uppercase
+            .label
+                +transition(color, 0.1s)
+                color: transparentize($header_text, 0.2)
+                display: block
+                font-size: 12px
+                line-height: 15px
+            .green
+                color: $green
+                font-size: 15px
+                line-height: 20px
+                padding: 0 5px 0 0
+                vertical-align: bottom
+            .orange
+                color: $orange
+                font-size: 15px
+                line-height: 20px
+                padding: 0 5px 0 0
+                vertical-align: bottom
+            .white
+                color: transparentize($header_text, 0.1)
+                font-size: 15px
+                line-height: 20px
+                padding: 0 5px 0 0
+                vertical-align: bottom
+            &:hover
+                cursor: pointer
+                .label
+                    color: $header_text
+        .header-bottom-links
+            border-left: 1px dotted $black
+            float: left
+            margin-left: 15px
+            padding-left: 25px
+            height: 40px
+            .header-bottom-link
+                +transition(color, 0.1s)
+                color: transparentize($header_text, 0.2)
+                display: inline-block
+                font-size: 14px
+                font-weight: 200
+                line-height: 40px
+                margin-right: 25px
+                text-transform: uppercase
+                vertical-align: middle
+                &:hover
+                    color: $header_text
+                &.active
+                    color: lighten($header_text, 15%)
+        .header-bottom-actions
+            @extend .clearfix
+            float: right
+            .header-budget
+                border-right: 1px dotted $black
+                font-weight: 400
+                float: left
+                height: 40px
+                margin-right: 25px
+                padding-right: 20px
+                text-transform: uppercase
+                .label
+                    +transition(color, 0.1s)
+                    color: transparentize($header_text, 0.2)
+                    display: block
+                    font-size: 12px
+                    line-height: 15px
+                .green
+                    color: $green
+                    font-size: 17px
+                    line-height: 20px
+                    padding: 0 5px 0 0
+                    vertical-align: bottom
+                .red
+                    color: $red
+                    font-size: 17px
+                    line-height: 20px
+                    padding: 0 5px 0 0
+                    vertical-align: bottom
+                &:hover
+                    cursor: pointer
+                    .label
+                        color: $header_text
 
 // GREATER THAN MAX-WIDTH (HUGE DISPLAY)
 

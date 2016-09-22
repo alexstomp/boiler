@@ -1,0 +1,257 @@
+// DASHBOARD
+
+.dashboard-content
+    @extend .clearfix
+    display: block
+    padding: 15px
+    .full
+        float: left
+        width: 100%
+    .main
+        float: left
+        width: calc(70% - 15px)
+    .side
+        float: right
+        width: 30%
+
+.dashboard-filters
+    @extend .clearfix
+    display: block
+    margin-bottom: 15px
+    .filters-left
+        border-right: 1px dotted #bac3d4
+        float: left
+        max-width: 350px
+        padding-right: 15px
+        .filter-label
+            color: #414b66
+            font-size: 11px
+            font-weight: 700
+            text-transform: uppercase
+            letter-spacing: 0.01em
+            padding-bottom: 10px
+        input.filter-search
+            display: inline-block
+            width: 100%
+        .button
+            margin-bottom: 0
+    .filters-right
+        float: right
+        padding-left: 15px
+        width: calc(100% - 341px)
+        .filter-label
+            color: #414b66
+            font-size: 11px
+            font-weight: 700
+            text-transform: uppercase
+            letter-spacing: 0.01em
+            padding-bottom: 10px
+        h2.temp
+            color: darken($bg, 35%)
+
+.panel
+    +roundedCorners(3px)
+    background: #eff0f4
+    position: relative
+    margin-bottom: 15px
+    min-height: 250px
+    width: 100%
+    .panel-header
+        @extend .clearfix
+        +roundedCorners(2px 2px 0 0)
+        background: #bac3d4
+        border: 1px solid #9faec3
+        display: block
+        padding: 15px 15px
+        height: 60px
+        .panel-header-text
+            +text-shadow(1px 1px 1px lighten(#bac3d4, 3%))
+            color: darken(#4b526c, 10%)
+            float: left
+            font-size: 14px
+            line-height: 30px
+            text-transform: uppercase
+            vertical-align: middle
+        .panel-header-actions
+            float: right
+            .panel-header-button, .panel-header-link
+                margin-bottom: 0
+    .panel-content.table
+        +roundedCorners(0 0 2px 2px)
+        border: 1px solid #c7cfda
+        border-top: 1px solid #fcfafb
+        display: block
+        width: 100%
+        .table-thead, .table-tbody
+            display: block
+            width: 100%
+            .table-tr
+                @extend .clearfix
+                border-bottom: 1px solid transparentize(#c7cfda, 0.15)
+                display: block
+                height: 40px
+                width: 100%
+                .table-th, .table-td
+                    color: #2c3552
+                    float: left
+                    font-size: 14px
+                    text-align: left
+                    line-height: 40px
+                    padding: 10px 15px
+                .table-th
+                    +text-shadow()
+                    color: #2c3552
+                    font-weight: 700
+                    font-size: 11px
+                    line-height: 20px
+                    padding-bottom: 5px
+                    text-align: center
+                    text-transform: uppercase
+                    &:first-child
+                        text-align: left
+                .order-item-name
+                    width: 40%
+                .order-item-price, .order-item-quantity, .order-item-delivery, .order-item-actions
+                    width: 15%
+                    &.red
+                        color: darken($red, 5%)
+                    &.orange
+                        color: darken($orange, 10%)
+                    &.green
+                        color: darken($green, 10%)
+                    .item-actions-add
+                        +transition(color, 0.2s)
+                        color: darken($green, 5%)
+                        display: inline-block
+                        font-size: 12px
+                        line-height: 50px
+                        text-transform: uppercase
+                        height: 50px
+                        .icon-add
+                            line-height: 50px
+                            vertical-align: middle
+                            margin-right: 5px
+                        &:hover
+                            color: darken($green, 10%)
+                .table-td.order-item-price.green
+                    color: darken($green, 10%)
+                .inventory-item-name
+                    width: 50%
+                .inventory-item-delivery, .inventory-item-remaining
+                    width: 25%
+        .table-tbody
+            .table-tr
+                background: #fbfbfd
+                border-top: 1px solid #fdfdfd
+                height: 52px
+                &:last-child
+                    +roundedCorners(0 0 3px 3px)
+                    border-bottom: 0
+                .table-td
+                    color: #555d72
+                    font-weight: 600
+                    font-size: 13px
+                    line-height: 50px
+                    text-align: center
+                    padding: 0 15px
+                    &:first-child
+                        text-align: left
+                    &:nth-child(even)
+                        background: #eff0f4
+                &:hover
+                    background: lighten(#eff0f4, 15%)
+                    cursor: pointer
+                    .table-td
+                        &:nth-child(even)
+                            background: lighten(#eff0f4, 2%)
+    .panel-content.list
+        +roundedCorners(0 0 2px 2px)
+        border: 1px solid #c7cfda
+        border-top: 1px solid #fcfafb
+        display: block
+        width: 100%
+        .list-header, .list-item
+            @extend .clearfix
+            background: #eff0f4
+            border-bottom: 1px solid transparentize(#c7cfda, 0.15)
+            display: block
+            height: 40px
+            padding: 10px 15px
+            position: relative
+            width: 100%
+            .list-header-left, .list-header-right
+                +text-shadow()
+                color: #2c3552
+                display: inline-block
+                font-weight: 700
+                font-size: 11px
+                line-height: 20px
+                padding-bottom: 5px
+                text-align: left
+                text-transform: uppercase
+            .list-header-right
+                float: right
+                &.green
+                    color: darken($green, 10%)
+        .list-item
+            @extend .clearfix
+            background: #fbfbfd
+            height: auto
+            padding: 10px 50px 11px 15px
+            &:last-child
+                border-bottom: 0
+            .task-details
+                display: block
+                float: left
+                strong
+                    display: block
+            .task-actions
+                border-left: 1px solid transparentize(#c7cfda, 0.25)
+                background: #eff0f4
+                position: absolute
+                right: 1px
+                top: 0
+                height: 65px
+                width: 40px
+                display: inline-block
+                float: right
+                .task-action-finish, .task-action-dnc
+                    display: inline-block
+                    margin-right: 10px
+                    text-align: center
+                    width: 40px
+                    &:hover
+                        background: darken(#eff0f4, 2%)
+                    .icon-check, .icon-cross
+                        font-size: 15px
+                        line-height: 32px
+                        vertical-align: middle
+                .task-action-finish
+                    border-bottom: 1px solid transparentize(#c7cfda, 0.25)
+                    color: darken($green, 5%)
+                .task-action-dnc
+                    color: darken($red, 10%)
+
+.latest-orders
+    .table-th, .table-td
+        float: right
+        width: 30%
+        &.red
+            color: $red !important
+        &:first-child
+            float: left
+            width: 40%
+
+
+
+// GREATER THAN MAX-WIDTH (HUGE DISPLAY)
+
+@media screen and (min-width: $max_width)
+
+// MEDIUM
+
+@media screen and (max-width: $medium)
+
+// SMALL
+
+@media screen and (max-width: $small)
